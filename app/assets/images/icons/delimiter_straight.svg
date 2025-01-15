@@ -1,0 +1,15 @@
+  <svg class="" preserveAspectRatio="none" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
+    <%# Main fill %>
+    <path d="M0 48L360 24L720 0L1080 24L1440 48L0 48Z" fill="white"/>
+    <%# Black border with increased stroke width %>
+    <path d="M0 48L360 24L720 0L1080 24L1440 48" 
+      stroke="black" 
+      stroke-width="2"
+      vector-effect="non-scaling-stroke"/>
+    <%# Shadow effect - slightly offset path %>
+    <path d="M4 46L364 22L724 -2L1084 22L1444 46" 
+      stroke="black" 
+      stroke-width="2"
+      vector-effect="non-scaling-stroke"
+      opacity="0.1"/>
+  </svg>

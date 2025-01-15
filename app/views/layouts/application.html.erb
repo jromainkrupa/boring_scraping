@@ -27,8 +27,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="h-full relative">
-    <main class="container mx-auto px-3 lg:px-0 h-full relative">
+  <body data-controller="follow-the-ant" class="min-h-screen bg-black">
+    <%# Add thin black strip at top %>
+    <div class="relative z-50 overflow-hidden bg-neutral-950 pt-2" style="height: 0.5rem;"></div>
+    
+    <%# Main content with rounded top corners %>
+    <main class="w-full mx-auto px-3 lg:px-0 relative bg-white" style="border-top-left-radius: 40px; border-top-right-radius: 40px;">
       <%= yield %>
     </main>
   </body>

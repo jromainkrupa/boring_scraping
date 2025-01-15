@@ -1,18 +1,335 @@
-<div>
-  <h1 class="text-7xl font-black md:pt-14 tracking-tight mb-5 ">
-    Scraping is boring. 
-    <br>
-    But we love it.
-  </h1>
-  <p class="text-2xl">Boring Scraping is a <span class="font-bold">web scraping agency</span> that builds custom scrapers.
-    <br>
-    We extract the data you need — legally, efficiently, and at scale.
-  </p>
+<div class="h-full relative">
+  <%= link_to root_path, class: "flex flex-col items-center  hover:text-gray-800 mt-4" do %>
+    <%= render_svg "icons/bug-ant", 
+      data: { follow_the_ant_target: "ant" },
+      styles: "w-12 h-12 mr-2 text-purple-500" %>
+      <h2 class="text-2xl font-bold">Boring Scraping</h2>
 
-  <div class="mt-10">
-    <%= render(ButtonComponent.new(size: :default)) do %>
-      Get in touch
+  <% end %>
+
+  <%# Hero %>
+  <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:items-center lg:justify-between lg:px-8 lg:py-40 gap-12">
+    <div class="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
+
+      <h1 class="text-7xl font-black tracking-tight mb-5 ">
+        <span class="text-purple-500">Scraping</span> is boring. 
+        <br>
+        But we <span class="text-purple-500">love</span> it.
+      </h1>
+      <p class="text-2xl text-gray-600 leading-relaxed">
+        Boring Scraping is a <span class="font-bold text-gray-900">web scraping agency</span>.
+        <br>
+        We extract the data you need — legally, efficiently, and at scale.
+      </p>
+      <div class="mt-10">
+        <%= render(ButtonComponent.new(size: :lg)) do %>
+          Request a Custom Scraper <span class="">→</span>
+        <% end %>
+      </div>
+    </div>
+    
+    <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:mr-0 lg:mt-0 lg:flex-none">
+      <div class="w-full relative">
+        <%= image_tag "convert_web_into_csv.png",
+          class: "w-full rounded-xl bg-black/5 shadow-2xl ring-2 ring-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none hover:scale-[1.02] transition-transform duration-300" %>
+        <div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/10"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="relative rotate-180 bg-yellow-500/50">
+  <%= render_svg "icons/delimiter_straight_multiple", styles: "w-full h-24 fill-none" %>
+</div>
+
+<%# How do we make magic happen? %>
+<div class="text-center  bg-yellow-500/50 py-20">
+  <h2 class="text-5xl font-black mb-16">
+    How do we make
+    <span class="bg-purple-500 text-white px-4 py-1 rounded-lg">magic happen</span>
+  </h2>
+  
+  <% steps = [
+    {
+      title: "Initial Consultation",
+      description: "A free consultation to understand your goals. Wether it's a one-time scrape or a recurring scrape, we'll figure it out.",
+      icon: "calendar"
+    },
+    {
+      title: "Tailored Scraper Design",
+      description: "We'll design a custom scraper that meets your specific requirements. We can offer a cloud-based solution, chrome extension or self-hosted solution.",
+      icon: "puzzle"
+    },
+    {
+      title: "Get your data",
+      description: "We'll deliver your data in the format you need. Whether it's a CSV, JSON or an API, we'll get it to you.",
+      icon: "download"
+    },
+    {
+      title: "Maintenance & Support",
+      description: "We'll provide ongoing support and maintenance to ensure your scraper runs smoothly. We can also integrate with your existing systems.",
+      icon: "support"
+    }
+  ] %>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <% steps.each_with_index do |step, index| %>
+      <div class="border-2 border-gray-700 bg-white rounded-xl p-8 hover:border-black hover:shadow-[4px_4px_0px_rgba(0,0,0,1)] transform hover:translate-y-[-2px] transition-all duration-200">
+        <div class="text-6xl text-purple-500 font-bold mb-4"><%= index + 1 %></div>
+        <h3 class="text-2xl font-bold"><%= step[:title] %></h3>
+        <p class="text-gray-600 mt-4"><%= step[:description] %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-12 flex items-center justify-center">
+    <%= render(ButtonComponent.new(size: :lg, variant: :purple)) do %>
+      Request a Custom Scraper <span class="ml-2">→</span>
     <% end %>
   </div>
 </div>
+
+<div class="relative bg-yellow-500/50">
+  <%= render_svg "icons/delimiter_straight_multiple", styles: "w-full h-24 fill-none" %>
+</div>
+
+<%# Why choose Boring Scraping? %>
+<div class="bg-white py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="relative isolate overflow-hidden bg-gradient-to-br from-purple-700 to-purple-900 px-8 py-24 text-center shadow-[6px_6px_0px_rgba(0,0,0,1)] border-2 border-black sm:rounded-3xl sm:px-16 transform hover:translate-y-[-2px] transition-all duration-200">
+      <div class="absolute inset-0 -z-10 opacity-30 background-pattern"></div>
+      
+      <h2 class="text-balance text-4xl font-black tracking-tight text-white sm:text-5xl mb-12">
+        Why choose <span class="">Boring Scraping</span>?
+      </h2>
+
+      <div class="mx-auto max-w-2xl space-y-6 text-left text-lg text-gray-50">
+        <div class="flex items-start gap-4 p-4 hover:bg-white/5 rounded-lg transition-colors">
+          <span class="text-2xl">👍</span>
+          <p>We don't do one-size-fits-all solutions. We'll build a scraper that's tailored to your needs.</p>
+        </div>
+        
+        <div class="flex items-start gap-4 p-4 hover:bg-white/5 rounded-lg transition-colors">
+          <span class="text-2xl">🤓</span>
+          <p>We're a team of <span class="font-bold ">web scraping experts</span> who love what we do.</p>
+        </div>
+        
+        <div class="flex items-start gap-4 p-4 hover:bg-white/5 rounded-lg transition-colors">
+          <span class="text-2xl">🔍</span>
+          <p>We inform you about the <span class="font-bold ">legal implications</span> of what you're trying to achieve.</p>
+        </div>
+        
+        <div class="flex items-start gap-4 p-4 hover:bg-white/5 rounded-lg transition-colors">
+          <span class="text-2xl">💻</span>
+          <p>We can offer a <span class="font-bold ">cloud-based solution</span>, <span class="font-bold text-purple-200">chrome extension</span> or <span class="font-bold text-purple-200">self-hosted solution</span>.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 flex items-center justify-center">
+        <%= render(ButtonComponent.new(size: :lg, variant: :yellow)) do %>
+          Request a Custom Scraper <span class="ml-2">→</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="relative rotate-180 bg-yellow-500/50">
+  <%= render_svg "icons/delimiter_rounded", styles: "w-full h-24 fill-none" %>
+</div>
+
+<%# Use cases %>
+<div class="bg-white py-24 bg-yellow-500/50">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <h2 class="text-5xl font-black mb-8">
+      Examples of what we can
+      <span class="bg-purple-500 text-white px-4 py-1 rounded-lg">do for you</span>
+    </h2>
+    <p class="text-gray-800 text-xl mb-16">We've built a wide range of scrapers for our clients. Here are some examples of what we can do.</p>
+    
+    <% use_cases = [
+      {
+        title: "Event Exhibitor Lists",
+        description: "Extract exhibitor information from trade shows and conferences to expand your network.",
+        icon: "calendar"
+      },
+      {
+        title: "Lead Generation",
+        description: "Collect contact information and business details from various online directories and platforms.",
+        icon: "users"
+      },
+      {
+        title: "Product Catalogs",
+        description: "Collect product information, specifications, and pricing from e-commerce websites.",
+        icon: "shopping-cart"
+      },
+      {
+        title: "Competitor Pricing",
+        description: "Monitor and analyze competitor pricing strategies to stay competitive in your market.",
+        icon: "chart-bar"
+      },
+      {
+        title: "Job Listings",
+        description: "Aggregate job postings from multiple sources for recruitment or market analysis.",
+        icon: "briefcase"
+      },
+      {
+        title: "Directories",
+        description: "Extract structured data from business directories, yellow pages, and industry listings.",
+        icon: "folder"
+      },
+      {
+        title: "Real Estate Listings",
+        description: "Collect property listings, prices, and market trends from real estate websites.",
+        icon: "home"
+      },
+      {
+        title: "CRM Extensions",
+        description: "Custom Chrome extensions to seamlessly integrate web data into your CRM system.",
+        icon: "puzzle"
+      }
+    ] %>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <% use_cases.each do |use_case| %>
+        <div class="bg-white group p-8 border-2 border-gray-700 rounded-xl hover:border-black hover:shadow-[4px_4px_0px_rgba(0,0,0,1)] transform hover:translate-y-[-2px] transition-all duration-200">
+          <div class="mb-4">
+            <%= render_svg "icons/#{use_case[:icon]}", styles: "w-12 h-12 text-purple-500 group-hover:scale-110 transition-transform duration-200" %>
+          </div>
+          <h3 class="text-xl font-bold mb-2"><%= use_case[:title] %></h3>
+          <p class="text-gray-600 leading-relaxed"><%= use_case[:description] %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <%# Request a custom scraper %>
+    <div class="mt-12 flex items-center justify-center">
+      <%= render(ButtonComponent.new(size: :lg)) do %>
+        Request a Custom Scraper <span class="ml-2">→</span>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="relative  bg-yellow-500/50">
+  <%= render_svg "icons/delimiter_rounded", styles: "w-full h-24 fill-none" %>
+</div>
+
+<%# Pricing %>
+<div class="bg-white py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <%# Purple header section %>
+    <div class="relative isolate overflow-hidden bg-gradient-to-br from-purple-700 to-purple-900 px-8 py-24 text-center shadow-[6px_6px_0px_rgba(0,0,0,1)] border-2 border-black sm:rounded-3xl sm:px-16 transform hover:translate-y-[-2px] transition-all duration-200 mb-24">
+      <div class="absolute inset-0 -z-10 opacity-30 background-pattern"></div>
+      
+      <h2 class="text-5xl font-black tracking-tight text-white mb-6">
+        Simple, transparent pricing
+      </h2>
+      <p class="mx-auto max-w-2xl text-lg text-gray-100">
+        Our pricing is always upfront and transparent. We price <span class="font-bold">once for building your scraper</span> and then you pay an <span class="font-bold">optional monthly fee for maintenance</span>.
+      </p>
+
+      <div class="mt-12 flex items-center justify-center">
+        <%= render(ButtonComponent.new(size: :lg, variant: :yellow)) do %>
+          Request a Custom Scraper <span class="ml-2">→</span>
+        <% end %>
+      </div>
+    </div>
+
+    <%# Pricing cards %>
+    <div class="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-7xl lg:grid-cols-12">
+      <%# One-Time Scraper %>
+      <div class="lg:col-span-5 group border-2 rounded-xl p-8 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] transform hover:translate-y-[-2px] transition-all duration-200">
+        <div class="h-full flex flex-col">
+          <div>
+            <span class="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-700">
+              One-time payment
+            </span>
+            <h3 class="text-2xl font-bold text-purple-500 mt-4">Custom Scraper</h3>
+            <div class="mt-4 flex items-baseline gap-x-2">
+              <span class="text-5xl font-bold text-gray-900">From 500€</span>
+              <span class="text-xl text-gray-600">/project</span>
+            </div>
+            <p class="mt-6 text-gray-600">One-time payment for building your scraper.</p>
+          </div>
+          
+          <ul class="mt-10 space-y-4 text-gray-900 flex-grow">
+            <li class="flex gap-x-3 items-start">
+              <%= render_svg "icons/check", styles: "w-6 h-6 text-purple-500 shrink-0 mt-0.5" %>
+              <span>Custom-built for your specific needs</span>
+            </li>
+            <li class="flex gap-x-3 items-start">
+              <%= render_svg "icons/check", styles: "w-6 h-6 text-purple-500 shrink-0 mt-0.5" %>
+              <span>Legal compliance assessment</span>
+            </li>
+            <li class="flex gap-x-3 items-start">
+              <%= render_svg "icons/check", styles: "w-6 h-6 text-purple-500 shrink-0 mt-0.5" %>
+              <span>Choice of delivery format (CSV, JSON, API)</span>
+            </li>
+            <li class="flex gap-x-3 items-start">
+              <%= render_svg "icons/check", styles: "w-6 h-6 text-purple-500 shrink-0 mt-0.5" %>
+              <span>2 weeks of maintenance & support</span>
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+
+      <%# + %>
+      <div class="lg:col-span-2 flex items-center justify-center">
+        <div class="text-4xl font-bold text-purple-500 rotate-0 lg:rotate-0">+</div>
+      </div>
+
+      <%# Ongoing maintenance %>
+      <div class="lg:col-span-5 group border-2 rounded-xl p-8 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] transform hover:translate-y-[-2px] transition-all duration-200">
+        <div class="h-full flex flex-col">
+          <div>
+            <span class="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-700">Optional</span>
+            <h3 class="text-2xl font-bold text-purple-500 mt-4">Maintenance</h3>
+            <div class="mt-4 flex items-baseline gap-x-2">
+              <span class="text-5xl font-bold text-gray-900">From 99€</span>
+              <span class="text-xl text-gray-600">/month</span>
+            </div>
+            <p class="mt-6 text-gray-600">For ongoing support and maintenance of your scraper.</p>
+          </div>
+
+          <ul class="mt-10 space-y-4 text-gray-900 flex-grow">
+            <li class="flex gap-x-3 items-start">
+              <%= render_svg "icons/check", styles: "w-6 h-6 text-purple-500 shrink-0 mt-0.5" %>
+              <span>Unlimited scrapes</span>
+            </li>
+            <li class="flex gap-x-3 items-start">
+              <%= render_svg "icons/check", styles: "w-6 h-6 text-purple-500 shrink-0 mt-0.5" %>
+              <span>Unlimited data</span>
+            </li>
+            <li class="flex gap-x-3 items-start">
+              <%= render_svg "icons/check", styles: "w-6 h-6 text-purple-500 shrink-0 mt-0.5" %>
+              <span>1-hour support response time</span>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+      <%# Custom plan %>
+      <div class="lg:col-span-12 group border-2 border-black rounded-xl p-8 bg-gradient-to-br from-purple-700 to-purple-900 shadow-[4px_4px_0px_rgba(0,0,0,1)] transform hover:translate-y-[-2px] transition-all duration-200">
+        <div class="lg:flex lg:items-center lg:justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-white">Self-hosted solution</h3>
+            <p class="mt-2 text-gray-100">If you want to host your own scraper, and get the code, we can offer you a self-hosted solution.</p>
+          </div>
+          <%= render(ButtonComponent.new(variant: :yellow, class: "mt-6 lg:mt-0")) do %>
+            Contact us <span class="ml-2">→</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="relative">
+  <%= render_svg "icons/delimiter_straight_multiple", styles: "w-full h-24 fill-none" %>
+</div>
+
 

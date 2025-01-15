@@ -17,14 +17,30 @@ class ButtonComponent < ViewComponent::Base
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2",
       "disabled:pointer-events-none disabled:opacity-50",
       
-      # Neutral variant specific classes
-      "bg-white text-black border-2 border-black",
-      "shadow-[2px_2px_0px_rgba(0,0,0,1)]",
-      "hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none",
+      # Variant specific classes
+      variant_classes,
 
       # Size classes
       size_classes
     ].join(" ")
+  end
+
+  def variant_classes
+    case @variant
+    when :yellow
+      "bg-yellow-400 text-black border-2 border-black " \
+      "shadow-[2px_2px_0px_rgba(0,0,0,1)] " \
+      "hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+    
+    when :purple
+      "bg-purple-500 text-white border-2 border-black " \
+      "shadow-[2px_2px_0px_rgba(0,0,0,1)] " \
+      "hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+    else # :neutral
+      "bg-white text-black border-2 border-black " \
+      "shadow-[2px_2px_0px_rgba(0,0,0,1)] " \
+      "hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+    end
   end
 
   def size_classes
@@ -32,7 +48,7 @@ class ButtonComponent < ViewComponent::Base
     when :sm
       "h-9 px-3"
     when :lg
-      "h-11 px-8"
+      "h-11 px-8 text-xl"
     when :icon
       "h-10 w-10"
     else # :default
