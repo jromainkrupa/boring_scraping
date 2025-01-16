@@ -332,4 +332,52 @@
   <%= render_svg "icons/delimiter_straight_multiple", styles: "w-full h-24 fill-none" %>
 </div>
 
+<%# FAQ %>
+<div class="bg-white py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <h2 class="text-5xl font-black mb-8">Frequently asked questions</h2>
 
+    <% faqs = [
+      {
+        question: "What is web scraping?",
+        answer: "Web scraping is the process of automatically extracting data from websites. It's a technique used to collect information that would be time-consuming to gather manually. This can include product details, contact information, prices, or any other publicly available data on websites."
+      },
+      {
+        question: "Is web scraping legal?",
+        answer: "Web scraping can be legal when done responsibly and in compliance with websites' terms of service and robots.txt files. We ensure all our scraping projects respect legal boundaries, website policies, and data protection regulations. We also implement proper rate limiting and identify ourselves appropriately to target websites."
+      },
+      {
+        question: "How much does it cost?",
+        answer: "Our pricing starts at 500€ for a custom scraper. The final cost depends on factors like the complexity of the website, the amount of data needed, and whether you need ongoing maintenance. We provide detailed quotes after understanding your specific requirements during the initial consultation."
+      }
+    ] %>
+
+    <%# Schema.org markup for FAQs %>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          <% faqs.each_with_index do |faq, index| %>
+            {
+              "@type": "Question",
+              "name": <%= faq[:question].to_json.html_safe %>,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": <%= faq[:question].to_json.html_safe %>
+              }
+            }<%= "," unless index == faqs.length - 1 %>
+          <% end %>
+        ]
+      }
+    </script>
+
+    <%= render(AccordionComponent.new) do |accordion| %>
+      <% faqs.each do |faq| %>
+        <%= accordion.with_item(title: faq[:question]) do %>
+          <%= faq[:answer] %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
