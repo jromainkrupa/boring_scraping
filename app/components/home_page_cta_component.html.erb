@@ -1,0 +1,20 @@
+<% if @with_modal %>
+  <div data-controller="modal" class="<%= @wrapper_class %>">
+    <%= render(ButtonComponent.new(size: @size, variant: @variant, data: { action: "click->modal#open" })) do %>
+      Request a Custom Scraper <span class="ml-2">→</span>
+    <% end %>
+
+    <dialog data-modal-target="dialog"  class="p-8 rounded-xl border-2 border-black bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] backdrop:bg-black/80 w-full backdrop:backdrop-blur-lg max-w-lg">
+      <div class="relative">
+        <%= render_svg "icons/x-mark", styles: "w-6 h-6 absolute top-0 right-0 cursor-pointer", data: { action: "click->modal#close" } %>
+        <%= render "contacts/new", contact: Contact.new %>
+      </div>
+    </dialog>
+  </div>
+<% else %>
+  <div class="<%= @wrapper_class %>">
+    <%= render(ButtonComponent.new(size: @size, variant: @variant)) do %>
+      Request a Custom Scraper <span class="ml-2">→</span>
+    <% end %>
+  </div>
+<% end %> 

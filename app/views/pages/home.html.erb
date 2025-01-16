@@ -21,11 +21,7 @@
         <br>
         We extract the data you need — legally, efficiently, and at scale.
       </p>
-      <div class="mt-10">
-        <%= render(ButtonComponent.new(size: :lg)) do %>
-          Request a Custom Scraper <span class="">→</span>
-        <% end %>
-      </div>
+      <%= render HomePageCtaComponent.new(with_modal: true, size: :lg, wrapper_class: "mt-10") %>
     </div>
     
     <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:mr-0 lg:mt-0 lg:flex-none">
@@ -83,12 +79,10 @@
     <% end %>
   </div>
 
-  <div class="mt-12 flex items-center justify-center">
-    <%= render(ButtonComponent.new(size: :lg, variant: :purple)) do %>
-      Request a Custom Scraper <span class="ml-2">→</span>
-    <% end %>
-  </div>
+  <%= render HomePageCtaComponent.new(with_modal: true, size: :lg, variant: :purple, wrapper_class: "mt-12") %>
+
 </div>
+
 
 <div class="relative bg-yellow-500/50">
   <%= render_svg "icons/delimiter_straight_multiple", styles: "w-full h-24 fill-none" %>
@@ -125,12 +119,8 @@
           <p>We can offer a <span class="font-bold ">cloud-based solution</span>, <span class="font-bold text-purple-200">chrome extension</span> or <span class="font-bold text-purple-200">self-hosted solution</span>.</p>
         </div>
       </div>
-
-      <div class="mt-12 flex items-center justify-center">
-        <%= render(ButtonComponent.new(size: :lg, variant: :yellow)) do %>
-          Request a Custom Scraper <span class="ml-2">→</span>
-        <% end %>
-      </div>
+      
+      <%= render HomePageCtaComponent.new(with_modal: true, size: :lg, variant: :yellow, wrapper_class: "mt-12 flex items-center justify-center") %>
     </div>
   </div>
 </div>
@@ -203,11 +193,8 @@
     </div>
 
     <%# Request a custom scraper %>
-    <div class="mt-12 flex items-center justify-center">
-      <%= render(ButtonComponent.new(size: :lg)) do %>
-        Request a Custom Scraper <span class="ml-2">→</span>
-      <% end %>
-    </div>
+    <%= render HomePageCtaComponent.new(with_modal: true, size: :lg, wrapper_class: "mt-12 flex items-center justify-center") %>
+
   </div>
 </div>
 
@@ -229,11 +216,8 @@
         Our pricing is always upfront and transparent. We price <span class="font-bold">once for building your scraper</span> and then you pay an <span class="font-bold">optional monthly fee for maintenance</span>.
       </p>
 
-      <div class="mt-12 flex items-center justify-center">
-        <%= render(ButtonComponent.new(size: :lg, variant: :yellow)) do %>
-          Request a Custom Scraper <span class="ml-2">→</span>
-        <% end %>
-      </div>
+      <%= render HomePageCtaComponent.new(with_modal: true, size: :lg, variant: :yellow, wrapper_class: "mt-12 flex items-center justify-center") %>
+
     </div>
 
     <%# Pricing cards %>
@@ -319,9 +303,8 @@
             <h3 class="text-2xl font-bold text-white">Self-hosted solution</h3>
             <p class="mt-2 text-gray-100">If you want to host your own scraper, and get the code, we can offer you a self-hosted solution.</p>
           </div>
-          <%= render(ButtonComponent.new(variant: :yellow, class: "mt-6 lg:mt-0")) do %>
-            Contact us <span class="ml-2">→</span>
-          <% end %>
+
+          <%= render HomePageCtaComponent.new(with_modal: true, variant: :yellow, wrapper_class: "mt-6 lg:mt-0") %>
         </div>
       </div>
     </div>
@@ -413,4 +396,6 @@
       <% end %>
     <% end %>
   </div>
+
+  <%= render HomePageCtaComponent.new(with_modal: true, size: :lg, wrapper_class: "mt-12 flex items-center justify-center") %>
 </div>

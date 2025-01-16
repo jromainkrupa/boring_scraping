@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class ButtonComponent < ViewComponent::Base
-  def initialize(variant: :neutral, size: :default, **options)
+  def initialize(variant: :neutral, size: :default, data: {}, **options)
     @variant = variant
     @size = size
+    @data = data
     @options = options
   end
 

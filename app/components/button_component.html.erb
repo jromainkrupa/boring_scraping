@@ -1,3 +1,6 @@
-<button class="<%= classes %>" <%= @options.map { |k, v| "#{k}=\"#{v}\"" }.join(" ") %>>
+
+
+<%# button_tag %>
+<%= button_tag class: classes, data: @data, options: @options do %>
   <%= content %>
-</button>
+<% end %>

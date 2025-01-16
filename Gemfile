@@ -60,3 +60,4 @@ end
 
 gem "view_component"
 gem "inline_svg"
+gem 'invisible_captcha'
