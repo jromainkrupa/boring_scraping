@@ -349,7 +349,40 @@
       {
         question: "How much does it cost?",
         answer: "Our pricing starts at 500€ for a custom scraper. The final cost depends on factors like the complexity of the website, the amount of data needed, and whether you need ongoing maintenance. We provide detailed quotes after understanding your specific requirements during the initial consultation."
+      },
+      {
+        question: "How long does it take to build a scraper?",
+        answer: "The timeline depends on the complexity of the project. For simple websites, we can deliver a working scraper in just a few days. More complex setups may take a week or more. We’ll provide an estimated timeline during the consultation."
+      },
+      {
+        question: "Can you scrape protected or login-based websites?",
+        answer: "Short answer: yes. We can scrape anything. We need to understand your specific requirements and how you want to use the data, to make sure you're covered."
+      },
+      {
+        question: "Why do you offer maintenance?",
+        answer: "We offer maintenance because we want to make sure your scraper is always up to date and working. It's often the case that websites change their structure, and we want to make sure your scraper is always working."
+      },
+      {
+        question: "What if a website blocks scraping?",
+        answer: "Some websites use anti-scraping techniques to prevent scraping. We can implement a variety of techniques like rotating proxies, rate-limiting, user-agent management and even Chrome extensions to get around these blocks."
+      },
+      {
+        question: "Can I have the code and run it myself?",
+        answer: "Yes, you can. We can provide you with the code and you can run it yourself. We can also build a Chrome extension for you, or a cloud-based solution."
+      },
+      {
+        question: "Can I get a refund?",
+        answer: "We offer a 14-day money-back guarantee. If you're not happy with the scraper, we'll refund you within 14 days of the purchase."
+      },
+      {
+        question: "What if I want to change the scraper later?",
+        answer: "We're happy to change things. We'll work with you to understand your specific requirements and build a scraper that meets your needs."
+      },
+      {
+        question: "Do you have a no code scraping solution?",
+        answer: "Yes, we do. We built <a href='https://www.datascrape.ai' class='text-purple-500 underline' target='_blank'>Datascrape.ai</a>, a no code scraping solution that allows you to scrape websites without having to write any code."
       }
+
     ] %>
 
     <%# Schema.org markup for FAQs %>
@@ -375,7 +408,7 @@
     <%= render(AccordionComponent.new) do |accordion| %>
       <% faqs.each do |faq| %>
         <%= accordion.with_item(title: faq[:question]) do %>
-          <%= faq[:answer] %>
+          <%= faq[:answer].html_safe %>
         <% end %>
       <% end %>
     <% end %>
