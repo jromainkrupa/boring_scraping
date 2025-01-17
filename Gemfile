@@ -62,3 +62,6 @@ end
 gem "view_component"
 gem "inline_svg"
 gem 'invisible_captcha'
+gem "devise", "~> 4.9"
+
+gem "madmin", "~> 2.0"
