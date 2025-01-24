@@ -65,3 +65,5 @@ gem 'invisible_captcha'
 gem "devise", "~> 4.9"
 
 gem "madmin", "~> 2.0"
+
+gem "sitemap_generator", "~> 6.3"
