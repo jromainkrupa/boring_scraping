@@ -387,7 +387,7 @@
               "name": <%= faq[:question].to_json.html_safe %>,
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": <%= faq[:question].to_json.html_safe %>
+                "text": <%= faq[:answer].to_json.html_safe %>
               }
             }<%= "," unless index == faqs.length - 1 %>
           <% end %>
